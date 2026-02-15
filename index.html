@@ -3,300 +3,255 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dibya 💘</title>
+  <title>Dibya 💖 Valentine</title>
 
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: "Comic Sans MS", cursive, sans-serif;
-      background: linear-gradient(135deg, #ffb6c1, #ffd1f4, #c7f0ff);
       height: 100vh;
-      overflow: hidden;
+      font-family: "Trebuchet MS", sans-serif;
+      background: linear-gradient(135deg, #ffb3d9, #ffd6f0, #c9f2ff);
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
+      overflow: hidden;
     }
 
-    .container {
-      background: rgba(255, 255, 255, 0.78);
-      padding: 40px 30px;
-      border-radius: 30px;
-      box-shadow: 0px 15px 40px rgba(0,0,0,0.25);
-      max-width: 550px;
+    .card {
+      width: 90%;
+      max-width: 430px;
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 25px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.18);
       position: relative;
       z-index: 10;
-      border: 3px solid rgba(255, 47, 123, 0.3);
-      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 0, 120, 0.2);
+      backdrop-filter: blur(12px);
     }
 
     h1 {
-      font-size: 2.3rem;
+      font-size: 2.1rem;
+      margin: 0;
       color: #ff2f7b;
-      margin-bottom: 10px;
     }
 
-    .subtitle {
-      font-size: 1.1rem;
+    .mini {
+      margin-top: 8px;
+      font-size: 1rem;
       color: #444;
-      margin-bottom: 20px;
-      font-weight: bold;
+      font-weight: 600;
     }
 
-    .typingBox {
-      font-size: 1.2rem;
+    .messageBox {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 240, 250, 0.75);
+      border: 1.5px dashed rgba(255, 47, 123, 0.35);
+      font-size: 1.1rem;
       color: #222;
-      min-height: 90px;
-      padding: 15px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      border: 2px dashed rgba(255, 47, 123, 0.4);
-      margin-bottom: 20px;
+      min-height: 110px;
+      line-height: 1.5;
+      font-weight: 600;
     }
 
     .question {
-      font-size: 1.8rem;
+      margin-top: 20px;
+      font-size: 1.6rem;
       color: #ff2f7b;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      text-shadow: 0px 0px 12px rgba(255, 47, 123, 0.25);
+      font-weight: 800;
     }
 
     .buttons {
-      margin-top: 15px;
+      margin-top: 18px;
       display: flex;
       justify-content: center;
-      gap: 18px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
     button {
-      padding: 12px 25px;
-      font-size: 1.1rem;
       border: none;
-      border-radius: 18px;
+      padding: 12px 22px;
+      font-size: 1.05rem;
+      border-radius: 16px;
       cursor: pointer;
+      font-weight: 800;
       transition: 0.2s ease;
-      font-weight: bold;
     }
 
     #yesBtn {
       background: #ff2f7b;
       color: white;
-      box-shadow: 0px 6px 18px rgba(255, 47, 123, 0.45);
+      box-shadow: 0px 7px 18px rgba(255, 47, 123, 0.35);
     }
 
     #yesBtn:hover {
-      transform: scale(1.12);
-    }
-
-    #noBtn {
-      background: #333;
-      color: white;
-      position: relative;
-    }
-
-    #musicBtn {
-      margin-top: 15px;
-      background: #6c63ff;
-      color: white;
-      box-shadow: 0px 6px 18px rgba(108, 99, 255, 0.35);
-    }
-
-    #musicBtn:hover {
       transform: scale(1.08);
     }
 
-    .hidden {
-      display: none;
+    #noBtn {
+      background: #222;
+      color: white;
     }
 
-    .finalMessage {
-      font-size: 1.7rem;
+    #musicBtn {
+      margin-top: 18px;
+      background: #6c63ff;
+      color: white;
+      box-shadow: 0px 7px 18px rgba(108, 99, 255, 0.3);
+      width: 100%;
+      max-width: 260px;
+    }
+
+    #musicBtn:hover {
+      transform: scale(1.05);
+    }
+
+    .final {
+      margin-top: 18px;
+      font-size: 1.5rem;
+      font-weight: 900;
       color: #ff2f7b;
-      margin-top: 20px;
-      animation: pop 0.7s ease;
-      font-weight: bold;
+      display: none;
+      animation: pop 0.6s ease;
     }
 
     @keyframes pop {
-      0% { transform: scale(0.2); opacity: 0; }
+      0% { transform: scale(0.5); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
 
-    /* Floating hearts */
+    /* hearts background */
     .heart {
       position: absolute;
       bottom: -20px;
-      font-size: 20px;
-      animation: floatUp 6s linear infinite;
-      opacity: 0.8;
+      font-size: 18px;
+      opacity: 0.75;
+      animation: floatUp 7s linear infinite;
       z-index: 1;
     }
 
     @keyframes floatUp {
       0% {
-        transform: translateY(0) translateX(0) rotate(0deg);
+        transform: translateY(0) translateX(0);
         opacity: 1;
       }
       100% {
-        transform: translateY(-115vh) translateX(50px) rotate(360deg);
+        transform: translateY(-120vh) translateX(40px);
         opacity: 0;
       }
-    }
-
-    /* Sparkle stars */
-    .sparkle {
-      position: absolute;
-      font-size: 14px;
-      opacity: 0.9;
-      animation: sparkle 2.5s ease-in-out infinite;
-      z-index: 1;
-    }
-
-    @keyframes sparkle {
-      0% { transform: scale(0.4); opacity: 0.2; }
-      50% { transform: scale(1.3); opacity: 1; }
-      100% { transform: scale(0.4); opacity: 0.2; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container" id="mainBox">
+  <div class="card">
     <h1>Dibya 💖</h1>
-    <div class="subtitle">My favorite human. My favorite universe. 🌍✨</div>
+    <div class="mini">From Ayushman 😭🌸</div>
 
-    <div class="typingBox" id="typingBox"></div>
+    <div class="messageBox" id="typingBox"></div>
 
     <div class="question">Will you be my Valentine? 💌</div>
 
     <div class="buttons">
-      <button id="yesBtn">YESSSS</button>
-      <button id="noBtn">NO😔 </button>
+      <button id="yesBtn">YES 😭💘</button>
+      <button id="noBtn">NO 🙄</button>
     </div>
 
     <button id="musicBtn">🎶 Play Cute Music</button>
 
-    <div id="message" class="finalMessage hidden"></div>
+    <div class="final" id="finalMsg"></div>
   </div>
 
-  <!-- Cute background music -->
   <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mp3">
   </audio>
 
   <script>
-    const noBtn = document.getElementById("noBtn");
-    const yesBtn = document.getElementById("yesBtn");
-    const message = document.getElementById("message");
     const typingBox = document.getElementById("typingBox");
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const finalMsg = document.getElementById("finalMsg");
     const musicBtn = document.getElementById("musicBtn");
     const bgMusic = document.getElementById("bgMusic");
 
-    // Typewriter romantic text
-    const textLines = [
-      "Hey Dibya ji... ",
-      "You are extremely lovely and beautifullll",
-      "You are my absolute lifee and fuck i love you,
-      "Your entire existence is fucking ethereal my princess.",
-      "Anw i wanted to ask you something important..."
-    ];
+    // CLEAN TYPEWRITER TEXT
+    const fullText = 
+      "Hey Dibya... 💖\n\n" +
+      "You are extremelyyyy fucking beautiful my Dibya \n\n" +
+      "You are my entire life\n\n" +
+      "Your entire existence is extremely fucking ethereal \n\n" +
+      "So my princess, today I just wanted to ask you some shi...";
 
-    let lineIndex = 0;
-    let charIndex = 0;
-
+    let i = 0;
     function typeWriter() {
-      if (lineIndex < textLines.length) {
-        if (charIndex < textLines[lineIndex].length) {
-          typingBox.innerHTML += textLines[lineIndex].charAt(charIndex);
-          charIndex++;
-          setTimeout(typeWriter, 45);
-        } else {
-          typingBox.innerHTML += "<br><br>";
-          lineIndex++;
-          charIndex = 0;
-          setTimeout(typeWriter, 400);
-        }
+      if (i < fullText.length) {
+        typingBox.innerHTML += fullText.charAt(i) === "\n" ? "<br>" : fullText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 35);
       }
     }
-
     typeWriter();
 
-    // NO button runs away 😭
-    noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - 140);
-      const y = Math.random() * (window.innerHeight - 80);
-
+    // NO button runs away (but stays inside screen)
+    noBtn.addEventListener("click", () => {
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 100);
       noBtn.style.position = "absolute";
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
     });
 
-    // YES button success
+    // YES button
     yesBtn.addEventListener("click", () => {
-      message.classList.remove("hidden");
-      message.innerHTML = "YAYYYYY <br><br>Dibya... I love you so much hahahaaa <br>Now you're officially my Valentine ✨";
+      finalMsg.style.display = "block";
+      finalMsg.innerHTML =
+        "YAYYYYY 😭💖💖💖<br><br>" +
+        "Dibya you're officially my Valentine 💌✨<br><br>" +
+        "I LOVE YOU SO MUCH 🥹🌸";
 
       yesBtn.style.display = "none";
       noBtn.style.display = "none";
 
       confettiBlast();
-      heartRain();
     });
 
-    // Music play button
+    // Music button
     musicBtn.addEventListener("click", () => {
       bgMusic.play();
-      musicBtn.innerHTML = "🎶 Music Playing 💖";
+      musicBtn.innerHTML = "🎶 Playing... 💖";
       musicBtn.style.background = "#ff2f7b";
     });
 
-    // Floating hearts generator
+    // Floating hearts
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart");
 
-      const hearts = ["💖","💘","💗","💕","💞","🌸","✨"];
+      const hearts = ["💖","💘","💗","💕","🌸","✨"];
       heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = Math.random() * 25 + 18 + "px";
-      heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+      heart.style.fontSize = Math.random() * 18 + 18 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 5 + "s";
 
       document.body.appendChild(heart);
 
       setTimeout(() => {
         heart.remove();
-      }, 6500);
+      }, 7000);
     }
 
-    setInterval(createHeart, 250);
+    setInterval(createHeart, 300);
 
-    // Sparkles generator
-    function createSparkle() {
-      const sparkle = document.createElement("div");
-      sparkle.classList.add("sparkle");
-      sparkle.innerHTML = "✨";
-
-      sparkle.style.left = Math.random() * 100 + "vw";
-      sparkle.style.top = Math.random() * 100 + "vh";
-      sparkle.style.animationDuration = Math.random() * 2 + 1.5 + "s";
-
-      document.body.appendChild(sparkle);
-
-      setTimeout(() => {
-        sparkle.remove();
-      }, 2500);
-    }
-
-    setInterval(createSparkle, 300);
-
-    // Confetti blast
+    // Confetti
     function confettiBlast() {
-      for (let i = 0; i < 100; i++) {
+      for (let j = 0; j < 90; j++) {
         const confetti = document.createElement("div");
         confetti.style.position = "absolute";
         confetti.style.width = "10px";
@@ -318,15 +273,6 @@
         });
 
         setTimeout(() => confetti.remove(), 4500);
-      }
-    }
-
-    // Extra heart rain on YES
-    function heartRain() {
-      for (let i = 0; i < 40; i++) {
-        setTimeout(() => {
-          createHeart();
-        }, i * 80);
       }
     }
   </script>
